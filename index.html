@@ -127,63 +127,70 @@
         </div>
         <div id="profile_sidebar_right" class="col-span-3 px-4">
           <div class="mt-4 space-y-4">
-            <div class="flex flex-wrap items-top p-3 bg-gradient-to-b from-white to-gray-500">
-              <div class="w-1/2">
-                <button class="amplitude-stop player w-9 h-9 border-2 border-gray-400 rounded">
-                  <span class="material-symbols-outlined relative text-2xl text-gray-600">
-                    stop
+            <div>
+              <div class="flex flex-wrap items-top p-3 bg-gradient-to-b from-white to-gray-500">
+                <div class="w-1/2">
+                  <button class="amplitude-stop player w-9 h-9 border-2 border-gray-400 rounded">
+                    <span class="material-symbols-outlined relative text-2xl text-gray-600">
+                      stop
+                    </span>
+                    <span class="material-symbols-outlined text-2xl relative text-gray-200">
+                      stop
+                    </span>
+                  </button>
+                  <button class="amplitude-prev player w-9 h-9 border-2 border-gray-400 rounded">
+                    <span class="material-symbols-outlined relative text-2xl text-gray-600">
+                      skip_previous
+                    </span>
+                    <span class="material-symbols-outlined text-2xl relative text-gray-200">
+                      skip_previous
+                    </span>
+                  </button>
+                  <button id="pause-button" class="amplitude-pause player w-9 h-9 border-2 border-gray-400 rounded">
+                    <span class="material-symbols-outlined relative text-2xl text-gray-600">
+                      pause
+                    </span>
+                    <span class="material-symbols-outlined text-2xl relative text-gray-200">
+                      pause
+                    </span>
+                  </button>
+                  <button id="play-button" class="amplitude-play player w-9 h-9 border-2 border-gray-400 rounded">
+                    <span class="material-symbols-outlined relative text-2xl text-gray-600">
+                      play_arrow
+                    </span>
+                    <span class="material-symbols-outlined text-2xl relative text-gray-200">
+                      play_arrow
+                    </span>
+                  </button>
+                  <button class="amplitude-next player w-9 h-9 border-2 border-gray-400 rounded">
+                    <span class="material-symbols-outlined relative text-2xl text-gray-600">
+                      skip_next
+                    </span>
+                    <span class="material-symbols-outlined text-2xl relative text-gray-200">
+                      skip_next
+                    </span>
+                  </button>
+                </div>
+                <div class=" w-1/2 bg-slate-900 border-slate-900 border-2 rounded p-1 text-white">
+                  <div data-amplitude-song-info="name" class="text-sm font-semibold"></div>
+                  <div data-amplitude-song-info="artist" class="text-sm"></div>
+                  <div id="player-state-message" class="text-xs text-green-600">stopped</div>
+                </div>
+                <div class="w-1/2 flex items-center">
+                  <span class="material-symbols-outlined text-gray-600">
+                    volume_up
                   </span>
-                  <span class="material-symbols-outlined text-2xl relative text-gray-200">
-                    stop
-                  </span>
-                </button>
-                <button class="amplitude-prev player w-9 h-9 border-2 border-gray-400 rounded">
-                  <span class="material-symbols-outlined relative text-2xl text-gray-600">
-                    skip_previous
-                  </span>
-                  <span class="material-symbols-outlined text-2xl relative text-gray-200">
-                    skip_previous
-                  </span>
-                </button>
-                <button id="pause-button" class="amplitude-pause player w-9 h-9 border-2 border-gray-400 rounded">
-                  <span class="material-symbols-outlined relative text-2xl text-gray-600">
-                    pause
-                  </span>
-                  <span class="material-symbols-outlined text-2xl relative text-gray-200">
-                    pause
-                  </span>
-                </button>
-                <button id="play-button" class="amplitude-play player w-9 h-9 border-2 border-gray-400 rounded">
-                  <span class="material-symbols-outlined relative text-2xl text-gray-600">
-                    play_arrow
-                  </span>
-                  <span class="material-symbols-outlined text-2xl relative text-gray-200">
-                    play_arrow
-                  </span>
-                </button>
-                <button class="amplitude-next player w-9 h-9 border-2 border-gray-400 rounded">
-                  <span class="material-symbols-outlined relative text-2xl text-gray-600">
-                    skip_next
-                  </span>
-                  <span class="material-symbols-outlined text-2xl relative text-gray-200">
-                    skip_next
-                  </span>
-                </button>
+                  <input type="range" class="amplitude-volume-slider w-fit" />
+                </div>
+                <div class="w-1/2 flex mt-1 items-center">
+                  <span class="amplitude-current-time text-xs mr-1"></span>
+                  <progress class="amplitude-song-played-progress"></progress>
+                </div>
               </div>
-              <div class=" w-1/2 bg-slate-900 border-slate-900 border-2 rounded p-1 text-white">
-                <div data-amplitude-song-info="name" class="text-sm font-semibold"></div>
-                <div data-amplitude-song-info="artist" class="text-sm"></div>
-                <div id="player-state-message" class="text-xs text-green-600">stopped</div>
-              </div>
-              <div class="w-1/2 flex items-center">
-                <span class="material-symbols-outlined text-gray-600">
-                  volume_up
-                </span>
-                <input type="range" class="amplitude-volume-slider w-fit" />
-              </div>
-              <div class="w-1/2 flex mt-1 items-center">
-                <span class="amplitude-current-time text-xs mr-1"></span>
-                <progress class="amplitude-song-played-progress"></progress>
+              <div class="bg-gray-800 text-white flex justify-between p-1">
+                <div class="text-xs font-semibold">Total Plays: 23232</div>
+                <div class="text-xs font-semibold">Downloads Today: 69</div>
+                <div class="text-xs font-semibold">Plays Today: 420</div>
               </div>
             </div>
             <div id="profile_blurbs" class="">
