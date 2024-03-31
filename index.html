@@ -3,7 +3,9 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" type="image/svg+xml" href="/img/myspace.svg" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Debb and Winnie</title>
 </head>
@@ -11,8 +13,6 @@
 <body class="bg-myspace-light">
   <div class="bg-myspace-light min-h-screen pb-4">
     <div id="profile_wrapper" class="max-w-6xl pb-4 mx-auto bg-white md:w-800">
-      <!-- <div id="profile_header" class="w-full bg-top bg-cover pb-2 bg-myspace-blue-500 px-2">
-      </div> -->
       <div id="profile_navbar" class="w-full px-4 bg-myspace-music flex justify-between items-center">
         <h1 class="text-s text-white mr-4"><a href="#">MYSPACE MUSIC</a></h1>
         <ul class="flex flex-wrap text-center items-center justify-center py-2 space-x-1">
@@ -112,7 +112,7 @@
                     <th
                       class="w-5/12 p-1 text-xs font-bold text-left align-top bg-myspace-blue-200 text-myspace-blue-700"
                       scope="row">Zodiac Sign</th>
-                    <td class="w-7/12 p-1 text-xs bg-myspace-blue-100">Cancer</td>
+                    <td class="w-7/12 p-1 text-xs bg-myspace-blue-100">Cancers</td>
                   </tr>
                   <tr id="profile_details_occupation">
                     <th
@@ -127,33 +127,62 @@
         </div>
         <div id="profile_sidebar_right" class="col-span-3 px-4">
           <div class="mt-4 space-y-4">
-            <div id="profile_extended_network"
-              class="flex items-center justify-center w-full mx-auto text-center border-2 border-black">
-              <div>
-                <h2 class="p-4 text-lg font-bold">Debb and Winnie is in your extended network</h2>
+            <div class="flex flex-wrap items-top p-3 bg-gradient-to-b from-white to-gray-500">
+              <div class="w-1/2">
+                <button class="amplitude-stop player w-9 h-9 border-2 border-gray-400 rounded">
+                  <span class="material-symbols-outlined relative text-2xl text-gray-600">
+                    stop
+                  </span>
+                  <span class="material-symbols-outlined text-2xl relative text-gray-200">
+                    stop
+                  </span>
+                </button>
+                <button class="amplitude-prev player w-9 h-9 border-2 border-gray-400 rounded">
+                  <span class="material-symbols-outlined relative text-2xl text-gray-600">
+                    skip_previous
+                  </span>
+                  <span class="material-symbols-outlined text-2xl relative text-gray-200">
+                    skip_previous
+                  </span>
+                </button>
+                <button class="amplitude-play-pause player w-9 h-9 border-2 border-gray-400 rounded">
+                  <span class="material-symbols-outlined relative text-2xl text-gray-600">
+                    pause
+                  </span>
+                  <span class="material-symbols-outlined text-2xl relative text-gray-200">
+                    pause
+                  </span>
+                </button>
+                <button class="amplitude-play player w-9 h-9 border-2 border-gray-400 rounded">
+                  <span class="material-symbols-outlined relative text-2xl text-gray-600">
+                    play_arrow
+                  </span>
+                  <span class="material-symbols-outlined text-2xl relative text-gray-200">
+                    play_arrow
+                  </span>
+                </button>
+                <button class="amplitude-next player w-9 h-9 border-2 border-gray-400 rounded">
+                  <span class="material-symbols-outlined relative text-2xl text-gray-600">
+                    skip_next
+                  </span>
+                  <span class="material-symbols-outlined text-2xl relative text-gray-200">
+                    skip_next
+                  </span>
+                </button>
               </div>
-            </div>
-            <div id="profile_blogs" class="grid flex-col grid-flow-row space-y-2 text-xs">
-              <p>
-                <b>Debb and Winnie's Latest Blogs</b>
-              </p>
-              <div class="space-y-2">
-                <div class="space-y-2">
-                  <p class="">Blog Example Title #1 <span class="float-right">(<a href="#"
-                        class="font-bold text-myspace-blue-600 hover:text-myspace-red-600 hover:underline">view
-                        more</a>)</span>
-                  </p>
-                  <p class="">Blog Example Title #2 <span class="float-right">(<a href="#"
-                        class="font-bold text-myspace-blue-600 hover:text-myspace-red-600 hover:underline">view
-                        more</a>)</span>
-                  </p>
-                  <p class="">Blog Example Title #3 <span class="float-right">(<a href="#"
-                        class="font-bold text-myspace-blue-600 hover:text-myspace-red-600 hover:underline">view
-                        more</a>)</span>
-                  </p>
-                </div>
-                <p class="flex justify-start text-xs">[<a href="#"
-                    class="font-bold text-myspace-blue-600 hover:underline">View All Blog Entries</a>]</p>
+              <div class=" w-1/2 bg-slate-900 border-slate-900 border-2 rounded p-1 text-white">
+                <div data-amplitude-song-info="name" class="text-sm font-semibold"></div>
+                <div data-amplitude-song-info="artist" class="text-sm"></div>
+              </div>
+              <div class="w-1/2 flex items-center">
+                <span class="material-symbols-outlined text-gray-600">
+                  volume_up
+                </span>
+                <input type="range" class="amplitude-volume-slider w-fit" />
+              </div>
+              <div class="w-1/2 flex mt-1 items-center">
+                <span class="amplitude-current-time text-xs mr-1"></span>
+                <progress class="amplitude-song-played-progress"></progress>
               </div>
             </div>
             <div id="profile_blurbs" class="">
@@ -428,6 +457,7 @@
     </div>
   </div>
 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/amplitudejs@5.3.2/dist/amplitude.js"></script>
   <script type="module" src="/main.js"></script>
 </body>
 
