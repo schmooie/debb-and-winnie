@@ -1,14 +1,434 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <div class="text-3xl font-bold underline">Sup</div>
-    <script type="module" src="/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Debb and Winnie</title>
+</head>
+
+<body class="bg-myspace-light">
+  <div class="bg-myspace-light min-h-screen pb-4">
+    <div id="profile_wrapper" class="max-w-6xl pb-4 mx-auto bg-white md:w-800">
+      <!-- <div id="profile_header" class="w-full bg-top bg-cover pb-2 bg-myspace-blue-500 px-2">
+      </div> -->
+      <div id="profile_navbar" class="w-full px-4 bg-myspace-music flex justify-between items-center">
+        <h1 class="text-s text-white mr-4"><a href="#">MYSPACE MUSIC</a></h1>
+        <ul class="flex flex-wrap text-center items-center justify-center py-2 space-x-1">
+          <li class="text-xs text-white"><a href="#">Music Videos</a></li>
+          <li class="text-xs text-black">|</li>
+          <li class="text-xs text-white"><a href="#">Directory</a></li>
+          <li class="text-xs text-black">|</li>
+          <li class="text-xs text-white"><a href="#">Search</a></li>
+          <li class="text-xs text-black">|</li>
+          <li class="text-xs text-white"><a href="#">Top Artists</a></li>
+          <li class="text-xs text-black">|</li>
+          <li class="text-xs text-white"><a href="#">Shows</a></li>
+          <li class="text-xs text-black">|</li>
+          <li class="text-xs text-white"><a href="#">Music Forums</a></li>
+          <li class="text-xs text-black">|</li>
+          <li class="text-xs text-white"><a href="#">Music Classifieds</a></li>
+          <li class="text-xs text-black">|</li>
+          <li class="text-xs text-white"><a href="#">Artist Signup</a></li>
+        </ul>
+      </div>
+      <div class="grid grid-cols-1 gap-0 md:grid-cols-5">
+        <div id="profile_sidebar_left" class="col-span-2 px-4">
+          <div id="profile_name" class="mt-4 mb-2">
+            <span class="text-lg font-bold tracking-wide">Debb and Winnie</span>
+          </div>
+          <div class="grid grid-cols-5 gap-3">
+            <div class="col-span-3">
+              <div class="space-y-2">
+                <img src="./img/debbAndWinnie.jpg"/>
+                <span id="profile_view_my" class="flex justify-center space-x-1 text-xs font-semibold">View My: <a
+                    href="#"
+                    class="mx-1 font-bold text-myspace-blue-600 hover:text-myspace-red-600 hover:underline">Pics</a> |
+                  <a href="#"
+                    class="mx-1 font-bold text-myspace-blue-600 hover:text-myspace-red-600 hover:underline">Videos</a></span>
+              </div>
+            </div>
+            <div class="col-span-2">
+              <div id="profile_sideinfo" class="space-y-2 text-xs leading-3">
+                <span id="profile_location" class="block leading-4 tracking-wide">BROOKLYN, United States</span>
+                <span id="profile_view" class="block leading-4 tracking-wide">Profile views: 64209</span>
+                <span class="flex justify-start my-1 leading-4 tracking-wide text-xs">
+                  <img class="w-4" src="img/onlinenow.gif" alt="" />
+                  <span class="text-green-500 font-bold ml-1 flex items-center">Online Now!</span>
+                </span>
+                <span id="profile_lastloggedin" class="block leading-4 tracking-wide">Last Login: </span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4">
+            <div class="space-y-4">
+              <div id="profile_contacting" class="border-2 border-t-0 border-myspace-blue-300">
+                <div id="profile_contacting_title">
+                  <h2 class="px-2 py-1 text-xs font-bold text-left text-white bg-myspace-blue-300">Contacting Debb and Winnie</h2>
+                </div>
+                <div id="profile_contacting_box" class="grid grid-cols-2 py-1">
+                  <a href="#"><img class="col-span-1 mx-auto" src="img/sendMailIcon.gif" alt="Send Message" /></a>
+                  <a href="#"><img class="col-span-1 mx-auto" src="img/forwardMailIcon.gif"
+                      alt="Forward to Friend" /></a>
+                  <a href="#"><img class="col-span-1 mx-auto" src="img/addFriendIcon.gif" alt="Add to Friends" /></a>
+                  <a href="#"><img class="col-span-1 mx-auto" src="img/addFavoritesIcon.gif"
+                      alt="Add to Favorites" /></a>
+                  <a href="#"><img class="col-span-1 mx-auto" src="img/messagefriend.gif" alt="Instant Message" /></a>
+                  <a href="#"><img class="col-span-1 mx-auto" src="img/blockUser.gif" alt="Block User" /></a>
+                  <a href="#"><img class="col-span-1 mx-auto" src="img/addToGroupIcon.gif" alt="Add to Group" /></a>
+                  <a href="#"><img class="col-span-1 mx-auto" src="img/rankUserIcon.gif" alt="Rank User" /></a>
+                </div>
+              </div>
+              <div id="profile_urlbox" class="p-1 border border-myspace-blue-300">
+                <span class="block text-xs font-bold">MySpace URL:</span>
+                <span class="block text-xs font-normal">https://debbandwinnie.com</span>
+              </div>
+              <table id="profile_details"
+                class="table w-full border-2 border-t-0 border-separate border-myspace-blue-300">
+                <caption id="profile_details_title">
+                  <h2 class="px-2 py-1 text-xs font-bold text-left text-white bg-myspace-blue-300">Debb and Winnie's Details</h2>
+                </caption>
+                <tbody>
+                  <tr id="profile_details_membersince">
+                    <th
+                      class="w-5/12 p-1 text-xs font-bold text-left align-top bg-myspace-blue-200 text-myspace-blue-700"
+                      scope="row">Member Since</th>
+                    <td class="w-7/12 p-1 text-xs bg-myspace-blue-100">01/04/2024</td>
+                  </tr>
+                  <tr id="profile_details_herfor">
+                    <th
+                      class="w-5/12 p-1 text-xs font-bold text-left align-top bg-myspace-blue-200 text-myspace-blue-700"
+                      scope="row">Here For</th>
+                    <td class="w-7/12 p-1 text-xs bg-myspace-blue-100">Networking, Friends</td>
+                  </tr>
+                  <tr id="profile_details_hometown">
+                    <th
+                      class="w-5/12 p-1 text-xs font-bold text-left align-top bg-myspace-blue-200 text-myspace-blue-700"
+                      scope="row">Hometown</th>
+                    <td class="w-7/12 p-1 text-xs bg-myspace-blue-100">Brooklyn, NY</td>
+                  </tr>
+                  <tr id="profile_details_zodiac_sign">
+                    <th
+                      class="w-5/12 p-1 text-xs font-bold text-left align-top bg-myspace-blue-200 text-myspace-blue-700"
+                      scope="row">Zodiac Sign</th>
+                    <td class="w-7/12 p-1 text-xs bg-myspace-blue-100">Cancer</td>
+                  </tr>
+                  <tr id="profile_details_occupation">
+                    <th
+                      class="w-5/12 p-1 text-xs font-bold text-left align-top bg-myspace-blue-200 text-myspace-blue-700"
+                      scope="row">Occupation</th>
+                    <td class="w-7/12 p-1 text-xs bg-myspace-blue-100">Cool Dudes</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div id="profile_sidebar_right" class="col-span-3 px-4">
+          <div class="mt-4 space-y-4">
+            <div id="profile_extended_network"
+              class="flex items-center justify-center w-full mx-auto text-center border-2 border-black">
+              <div>
+                <h2 class="p-4 text-lg font-bold">Debb and Winnie is in your extended network</h2>
+              </div>
+            </div>
+            <div id="profile_blogs" class="grid flex-col grid-flow-row space-y-2 text-xs">
+              <p>
+                <b>Debb and Winnie's Latest Blogs</b>
+              </p>
+              <div class="space-y-2">
+                <div class="space-y-2">
+                  <p class="">Blog Example Title #1 <span class="float-right">(<a href="#"
+                        class="font-bold text-myspace-blue-600 hover:text-myspace-red-600 hover:underline">view
+                        more</a>)</span>
+                  </p>
+                  <p class="">Blog Example Title #2 <span class="float-right">(<a href="#"
+                        class="font-bold text-myspace-blue-600 hover:text-myspace-red-600 hover:underline">view
+                        more</a>)</span>
+                  </p>
+                  <p class="">Blog Example Title #3 <span class="float-right">(<a href="#"
+                        class="font-bold text-myspace-blue-600 hover:text-myspace-red-600 hover:underline">view
+                        more</a>)</span>
+                  </p>
+                </div>
+                <p class="flex justify-start text-xs">[<a href="#"
+                    class="font-bold text-myspace-blue-600 hover:underline">View All Blog Entries</a>]</p>
+              </div>
+            </div>
+            <div id="profile_blurbs" class="">
+              <header id="profile_blurbs_title" class="px-2 py-1 bg-myspace-orange-100">
+                <h2 class="text-sm font-bold text-myspace-orange-200">Debb and Winnie's Blurbs</h2>
+              </header>
+              <h3 id="profile_blurbs_about_me_title" class="mt-2 mb-1 text-sm font-bold text-myspace-orange-200">About
+                me:
+              </h3>
+              <div id="profile_blurbs_biography" class="space-y-2 text-xs">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut rhoncus lorem eu libero pharetra dapibus.
+                  Phasellus odio ex,
+                  faucibus id bibendum et, semper semper risus. Suspendisse eu interdum quam. Vivamus lacinia lorem
+                  quam, non semper ipsum
+                  vulputate eu. Nam id fermentum elit, volutpat scelerisque turpis. Morbi aliquam at sapien et semper.
+                  Aenean a urna
+                  nulla.
+                </p>
+              </div>
+              <h3 id="profile_blurbs_about_me_title" class="mt-2 mb-1 text-sm font-bold text-myspace-orange-200">Who I'd
+                like to meet:
+              </h3>
+              <div id="profile_blurbs_biography" class="space-y-2 text-xs">
+                <p>Nullam cursus fringilla pharetra. Vestibulum feugiat nunc purus, non placerat nunc porttitor et.
+                  Praesent eget nunc sed
+                  odio mollis venenatis. Vestibulum eu commodo enim, quis cursus lorem. Vestibulum id risus eget nulla
+                  cursus lobortis.
+                  Nullam mattis mi sit amet metus tempus pharetra non accumsan dolor. Cras sit amet est in justo
+                  interdum aliquet. Donec
+                  bibendum in nibh eu facilisis. Duis ultrices diam augue, a porttitor leo accumsan nec.
+                </p>
+              </div>
+            </div>
+            <div id="profile_friends" class="friends">
+              <header id="profile_friends_title" class="px-2 py-1 bg-myspace-orange-100">
+                <h2 class="text-sm font-bold text-myspace-orange-200">Debb and Winnie's Friend Space</h2>
+              </header>
+              <p id="profile_friends_following_info" class="my-2 text-xs"><b>Debb and Winnie has <span
+                    class="text-sm font-normal text-myspace-red-600">45</span> friends.</b></p>
+              <div class="grid grid-cols-3 gap-2 space-y-3 sm:grid-cols-4">
+                <div class="flex flex-wrap items-start justify-center">
+                  <div>
+                    <div class="text-xs font-bold text-center">
+                      <a href="" class="text-myspace-blue-600">Michael Foster</a>
+                    </div>
+                    <a href="" class="">
+                      <img
+                        src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80" />
+                    </a>
+                    <span class="flex justify-center my-1 leading-4 tracking-wide text-xs">
+                      <img class="w-4" src="img/onlinenow.gif" alt="" />
+                      <span class="text-green-500 font-bold ml-1 flex items-center">Online Now!</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="flex flex-wrap items-start justify-center">
+                  <div>
+                    <div class="text-xs font-bold text-center">
+                      <a href="" class="text-myspace-blue-600">Dries Vincent</a>
+                    </div>
+                    <a href="" class="">
+                      <img
+                        src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80" />
+                    </a>
+                    <span class="flex justify-center my-1 leading-4 tracking-wide text-xs">
+                      <img class="w-4" src="img/onlinenow.gif" alt="" />
+                      <span class="text-green-500 font-bold ml-1 flex items-center">Online Now!</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="flex flex-wrap items-start justify-center">
+                  <div>
+                    <div class="text-xs font-bold text-center">
+                      <a href="" class="text-myspace-blue-600">Lindsay Walton</a>
+                    </div>
+                    <a href="" class="">
+                      <img
+                        src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80" />
+                    </a>
+                    <!-- <span class="flex justify-center my-1 leading-4 tracking-wide text-xs">
+                        <img class="w-4" src="img/onlinenow.gif" alt="" />
+                        <span class="text-green-500 font-bold ml-1 flex items-center">Online Now!</span>
+                        </span> -->
+                  </div>
+                </div>
+                <div class="flex flex-wrap items-start justify-center">
+                  <div>
+                    <div class="text-xs font-bold text-center">
+                      <a href="" class="text-myspace-blue-600">Courtney Henry</a>
+                    </div>
+                    <a href="" class="">
+                      <img
+                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80" />
+                    </a>
+                    <!-- <span class="flex justify-center my-1 leading-4 tracking-wide text-xs">
+                        <img class="w-4" src="img/onlinenow.gif" alt="" />
+                        <span class="text-green-500 font-bold ml-1 flex items-center">Online Now!</span>
+                        </span> -->
+                  </div>
+                </div>
+                <div class="flex flex-wrap items-start justify-center">
+                  <div>
+                    <div class="text-xs font-bold text-center">
+                      <a href="" class="text-myspace-blue-600">Tom Cook</a>
+                    </div>
+                    <a href="" class="">
+                      <img
+                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80" />
+                    </a>
+                    <span class="flex justify-center my-1 leading-4 tracking-wide text-xs">
+                      <img class="w-4" src="img/onlinenow.gif" alt="" />
+                      <span class="text-green-500 font-bold ml-1 flex items-center">Online Now!</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="flex flex-wrap items-start justify-center">
+                  <div>
+                    <div class="text-xs font-bold text-center">
+                      <a href="" class="text-myspace-blue-600">Whitney Francis</a>
+                    </div>
+                    <a href="" class="">
+                      <img
+                        src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80" />
+                    </a>
+                    <!-- <span class="flex justify-center my-1 leading-4 tracking-wide text-xs">
+                        <img class="w-4" src="img/onlinenow.gif" alt="" />
+                        <span class="text-green-500 font-bold ml-1 flex items-center">Online Now!</span>
+                        </span> -->
+                  </div>
+                </div>
+                <div class="flex flex-wrap items-start justify-center">
+                  <div>
+                    <div class="text-xs font-bold text-center">
+                      <a href="" class="text-myspace-blue-600">Leonard Krasner</a>
+                    </div>
+                    <a href="" class="">
+                      <img
+                        src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80" />
+                    </a>
+                    <span class="flex justify-center my-1 leading-4 tracking-wide text-xs">
+                      <img class="w-4" src="img/onlinenow.gif" alt="" />
+                      <span class="text-green-500 font-bold ml-1 flex items-center">Online Now!</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4 w-full">
+                <a href=""
+                  class="flex items-end justify-end text-myspace-red-600 hover:underline text-xs font-bold">View All of
+                  Debb and Winnie's Friends</a>
+              </div>
+            </div>
+            <div id="comments" class="comment-wall mt-4">
+              <header class="bg-myspace-orange-100 px-2 py-1">
+                <h2 class="text-myspace-orange-200 font-bold text-sm">Debb and Winnie's Friends Comments</h2>
+              </header>
+              <p class="text-xs my-2 flex items-center"><b class="mr-auto">Displaying <span
+                    class="text-myspace-red-600 font-normal text-sm">3</span> comments</b> (<button type="button"
+                  class="font-bold text-myspace-blue-600 hover:text-myspace-red-600 hover:underline">Add
+                  Comment</button>)
+              </p>
+              <table class="table border-separate w-full">
+                <tbody>
+                  <tr>
+                    <th class="bg-myspace-orange-300 w-4/12 p-2" scope="row">
+                      <figure>
+                        <span class="text-myspace-blue-600 font-bold text-xs text-center">Leonard Krasner</span>
+                        <img
+                          src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
+                          class="w-2/3 mx-auto" />
+                        <span class="flex justify-center my-1 leading-4 tracking-wide text-xs">
+                          <img class="w-4" src="img/onlinenow.gif" alt="" />
+                          <span class="text-green-500 font-bold ml-1 flex items-center">Online Now!</span>
+                        </span>
+                      </figure>
+                    </th>
+                    <td class="bg-myspace-orange-100 w-8/12 p-2">
+                      <h3 class="text-sm text-left mb-2 font-bold">1/01/2022 6:54 PM</h3>
+                      <p class="text-xs font-normal text-left m-0">Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Ut rhoncus lorem eu libero pharetra dapibus. Phasellus odio ex,
+                        faucibus id bibendum et, semper semper risus. Suspendisse eu interdum quam. Vivamus lacinia
+                        lorem quam, non semper ipsum
+                        vulputate eu. Nam id fermentum elit, volutpat scelerisque turpis. Morbi aliquam at sapien et
+                        semper. Aenean a urna
+                        nulla.
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="bg-myspace-orange-300 w-4/12 p-2" scope="row">
+                      <figure>
+                        <span class="text-myspace-blue-600 font-bold text-xs text-center">Courtney Henry</span>
+                        <img
+                          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
+                          class="w-2/3 mx-auto" />
+                        <!-- <span class="flex justify-center my-1 leading-4 tracking-wide text-xs">
+                            <img class="w-4" src="img/onlinenow.gif" alt="" />
+                            <span class="text-green-500 font-bold ml-1 flex items-center">Online Now!</span>
+                            </span> -->
+                      </figure>
+                    </th>
+                    <td class="bg-myspace-orange-100 w-8/12 p-2">
+                      <h3 class="text-sm text-left mb-2 font-bold">1/01/2022 1:02 PM</h3>
+                      <p class="text-xs font-normal text-left m-0">Lorem ipsum dolor sit amet, consectetur adipinulla.
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="bg-myspace-orange-300 w-4/12 p-2" scope="row">
+                      <figure>
+                        <span class="text-myspace-blue-600 font-bold text-xs text-center">Tom Cook</span>
+                        <img
+                          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
+                          class="w-2/3 mx-auto" />
+                        <span class="flex justify-center my-1 leading-4 tracking-wide text-xs">
+                          <img class="w-4" src="img/onlinenow.gif" alt="" />
+                          <span class="text-green-500 font-bold ml-1 flex items-center">Online Now!</span>
+                        </span>
+                      </figure>
+                    </th>
+                    <td class="bg-myspace-orange-100 w-8/12 p-2">
+                      <h3 class="text-sm text-left mb-2 font-bold">1/01/2022 2:34 AM</h3>
+                      <p class="text-xs font-normal text-left m-0">Vivamus lacinia lorem quam, non semper ipsum
+                        vulputate eu. Nam id fermentum elit, volutpat scelerisque turpis. Morbi aliquam at sapien et
+                        semper. Aenean a urna
+                        nulla.
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="profile_footer" class="max-w-6xl mx-auto mt-4 mb-6 md:w-800">
+      <div class="flex flex-wrap items-center justify-center text-sm text-center text-gray-800">
+        <div id="profile_footer_info" class="w-full">
+          <ul class="flex flex-wrap text-center items-center justify-center py-2 mr-auto space-x-1">
+            <li class="text-xs"><a href="#" class="text-myspace-blue-500 hover:text-myspace-red-600">About</a></li>
+            <li class="text-xs text-black">|</li>
+            <li class="text-xs"><a href="#" class="text-myspace-blue-500 hover:text-myspace-red-600">FAQ</a></li>
+            <li class="text-xs text-black">|</li>
+            <li class="text-xs"><a href="#" class="text-myspace-blue-500 hover:text-myspace-red-600">Terms</a></li>
+            <li class="text-xs text-black">|</li>
+            <li class="text-xs"><a href="#" class="text-myspace-blue-500 hover:text-myspace-red-600">Privacy</a></li>
+            <li class="text-xs text-black">|</li>
+            <li class="text-xs"><a href="#" class="text-myspace-blue-500 hover:text-myspace-red-600">Safety Tips</a>
+            </li>
+            <li class="text-xs text-black">|</li>
+            <li class="text-xs"><a href="#" class="text-myspace-blue-500 hover:text-myspace-red-600">Contact Myspace</a>
+            </li>
+            <li class="text-xs text-black">|</li>
+            <li class="text-xs"><a href="#" class="text-myspace-blue-500 hover:text-myspace-red-600">Report
+                Inappropriate Content</a>
+            </li>
+            <li class="text-xs text-black">|</li>
+            <li class="text-xs"><a href="#" class="text-myspace-blue-500 hover:text-myspace-red-600">Promote!</a></li>
+            <li class="text-xs text-black">|</li>
+            <li class="text-xs"><a href="#" class="text-myspace-blue-500 hover:text-myspace-red-600">Advertise</a></li>
+            <li class="text-xs text-black">|</li>
+            <li class="text-xs"><a href="#" class="text-myspace-blue-500 hover:text-myspace-red-600">MySpace
+                International</a>
+            </li>
+          </ul>
+        </div>
+        <div id="profile_footer_copyright" class="w-full text-xs">
+          &copy;2003-2006 MySpace.com. All Rights Reserved.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>
