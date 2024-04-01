@@ -1,6 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { SONGS, TOTAL_PLAYS } from './CONSTANTS';
 import { getRandomInt } from './UTILS';
+import BarVisualization from './BarVisualization';
 
 const BUTTON_CONFIGS = [
   {
@@ -25,22 +26,45 @@ const BUTTON_CONFIGS = [
   }
 ];
 
+const VISUALIZATION_CONFIG = { bar_color: '#16a34a', width: 60, height: 38, bar_width: 2, spacer_width: 4, offset: 300 };
+
+let intervalId;
+
 function Player() {
+  const [playerState, setPlayerState] = useState('stopped');
+
   useEffect(() => {
-    Amplitude.init({ songs: SONGS });
-    // TODO: wire up player state to the copy
+    Amplitude.init({
+      songs: SONGS,
+      visualizations: [{
+        object: BarVisualization,
+        params: VISUALIZATION_CONFIG }],
+      visualization: 'bar_visualization'
+    });
+
+    clearInterval(intervalId);
+
+    intervalId = setInterval(() => {
+      setPlayerState(Amplitude.getPlayerState());
+    }, 375);
   }, []);
 
-  const numPlaysPerSong = [];
-  let totalPlays = TOTAL_PLAYS;
+  const numPlaysPerSong = useMemo(() => {
+    let totalPlays = TOTAL_PLAYS;
+    let result = []
 
-  for (let i = 0; i < SONGS.length - 1; i++) {
-    const playsForCurSong = getRandomInt(10, totalPlays);
-    numPlaysPerSong.push(playsForCurSong);
-    totalPlays -= playsForCurSong;
-  }
+    for (let i = 0; i < SONGS.length - 1; i++) {
+      const playsForCurSong = getRandomInt(10, totalPlays);
+      result.push(playsForCurSong);
+      totalPlays -= playsForCurSong;
+    }
 
-  numPlaysPerSong.push(totalPlays);
+    result.push(totalPlays);
+
+    return result;
+  }, [TOTAL_PLAYS])
+
+
 
   return (
     <div className="border-black border">
@@ -57,10 +81,13 @@ function Player() {
             </button>
           ))}
         </div>
-        <div className=" w-1/2 bg-slate-900 border-slate-900 border-2 rounded p-1 text-white">
-          <div data-amplitude-song-info="name" className="text-sm font-semibold"></div>
-          <div data-amplitude-song-info="artist" className="text-sm"></div>
-          <div id="player-state-message" className="text-xs text-green-600">stopped</div>
+        <div className=" w-1/2 flex items-end bg-slate-900 border-slate-900 border-2 rounded p-1 text-white">
+          <div className="w-2/3">
+            <div data-amplitude-song-info="name" className="text-sm font-semibold"></div>
+            <div data-amplitude-song-info="artist" className="text-sm"></div>
+            <div id="player-state-message" className="text-xs text-green-600">{playerState}</div>
+          </div>
+          <div className="amplitude-visualization w-1/3 h-10"></div>
         </div>
         <div className="w-1/2 flex items-center">
           <span className="material-symbols-outlined text-gray-600">
