@@ -1,22 +1,7 @@
-import { useEffect } from 'react';
 import './App.css'
+import Player from './Player';
 
 function App() {
-
-  useEffect(() => {
-    Amplitude.init({
-      songs: [
-        {
-          name: 'NYC Exes',
-          artist: 'Debb and Winnie',
-          album: 'Ancram EP',
-          url: './audio/nyc_exes.m4a',
-          cover_art_url: './img/debbAndWinnie.jpg'
-        }
-      ]
-    })
-  }, []);
-
   return (
     <>
       <div className="bg-myspace-light min-h-screen pb-4">
@@ -49,7 +34,7 @@ function App() {
               <div className="grid grid-cols-5 gap-3">
                 <div className="col-span-3">
                   <div className="space-y-2">
-                    <img src="./img/debbAndWinnie.jpg" />
+                    <img src="./img/daw_cereal.jpg" />
                     <span id="profile_view_my" className="flex justify-center space-x-1 text-xs font-semibold">View My: <a
                       href="#"
                       className="mx-1 font-bold text-myspace-blue-600 hover:text-myspace-red-600 hover:underline">Pics</a> |
@@ -135,72 +120,7 @@ function App() {
             </div>
             <div id="profile_sidebar_right" className="col-span-3 px-4">
               <div className="mt-4 space-y-4">
-                <div>
-                  <div className="flex flex-wrap items-top p-3 bg-gradient-to-b from-white to-gray-500">
-                    <div className="w-1/2">
-                      <button className="amplitude-stop player w-9 h-9 border-2 border-gray-400 rounded">
-                        <span className="material-symbols-outlined relative text-2xl text-gray-600">
-                          stop
-                        </span>
-                        <span className="material-symbols-outlined text-2xl relative text-gray-200">
-                          stop
-                        </span>
-                      </button>
-                      <button className="amplitude-prev player w-9 h-9 border-2 border-gray-400 rounded">
-                        <span className="material-symbols-outlined relative text-2xl text-gray-600">
-                          skip_previous
-                        </span>
-                        <span className="material-symbols-outlined text-2xl relative text-gray-200">
-                          skip_previous
-                        </span>
-                      </button>
-                      <button id="pause-button" className="amplitude-pause player w-9 h-9 border-2 border-gray-400 rounded">
-                        <span className="material-symbols-outlined relative text-2xl text-gray-600">
-                          pause
-                        </span>
-                        <span className="material-symbols-outlined text-2xl relative text-gray-200">
-                          pause
-                        </span>
-                      </button>
-                      <button id="play-button" className="amplitude-play player w-9 h-9 border-2 border-gray-400 rounded">
-                        <span className="material-symbols-outlined relative text-2xl text-gray-600">
-                          play_arrow
-                        </span>
-                        <span className="material-symbols-outlined text-2xl relative text-gray-200">
-                          play_arrow
-                        </span>
-                      </button>
-                      <button className="amplitude-next player w-9 h-9 border-2 border-gray-400 rounded">
-                        <span className="material-symbols-outlined relative text-2xl text-gray-600">
-                          skip_next
-                        </span>
-                        <span className="material-symbols-outlined text-2xl relative text-gray-200">
-                          skip_next
-                        </span>
-                      </button>
-                    </div>
-                    <div className=" w-1/2 bg-slate-900 border-slate-900 border-2 rounded p-1 text-white">
-                      <div data-amplitude-song-info="name" className="text-sm font-semibold"></div>
-                      <div data-amplitude-song-info="artist" className="text-sm"></div>
-                      <div id="player-state-message" className="text-xs text-green-600">stopped</div>
-                    </div>
-                    <div className="w-1/2 flex items-center">
-                      <span className="material-symbols-outlined text-gray-600">
-                        volume_up
-                      </span>
-                      <input type="range" className="amplitude-volume-slider w-fit" />
-                    </div>
-                    <div className="w-1/2 flex mt-1 items-center">
-                      <span className="amplitude-current-time text-xs mr-1"></span>
-                      <progress className="amplitude-song-played-progress"></progress>
-                    </div>
-                  </div>
-                  <div className="bg-gray-800 text-white flex justify-between p-1">
-                    <div className="text-xs font-semibold">Total Plays: 23232</div>
-                    <div className="text-xs font-semibold">Downloads Today: 69</div>
-                    <div className="text-xs font-semibold">Plays Today: 420</div>
-                  </div>
-                </div>
+                <Player />
                 <div id="profile_blurbs" className="">
                   <header id="profile_blurbs_title" className="px-2 py-1 bg-myspace-orange-100">
                     <h2 className="text-sm font-bold text-myspace-orange-200">Debb and Winnie's Blurbs</h2>
