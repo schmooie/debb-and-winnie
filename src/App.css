@@ -20,6 +20,7 @@
 button span:first-child {
   z-index: 1;
 }
+
 button span:nth-child(2) {
   top: -32px;
   z-index: 0;
